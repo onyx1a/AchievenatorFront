@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -15,13 +11,81 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-body {
+  color: #f8f8f8;
+}
+
+.game-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #242831;
+}
+
+.game-logo {
+  width: 300px;
+  height: 140px;
+}
+
+.game-info {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 15px;
+  height: 140px;
+  overflow: hidden;
+}
+
+.game-title {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #c7d5e0;
+}
+
+.game-desc {
+  font-size: 18px;
+  line-height: 18px;
+  margin-bottom: 5px;
+}
+
+.game-icons {
+  margin-top: 10px;
+  display: flex;
+}
+
+.game-icon {
+  margin-right: 10px;
+  width: 48px;
+  height: 48px;
+}
+
+.App-body li {
+  list-style-type: none;
+  font-size: 1.2em;
+}
+
+.App-body ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.App-body a {
+  color: #c7d5e0;
+  text-decoration: none;
+}
+
+.App-body h2 {
+  line-height: 1;
 }
 
 .App-link {
