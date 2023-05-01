@@ -125,11 +125,9 @@
 
 .question-icon {
   vertical-align: middle;
-  /* font-size: 1em; */
+  font-size: 0.8em;
   color: #888;
-  /* width: 16px; */
-  /* float: left; */
-  /* margin-left: 5px; */
+  margin-left: 5px;
 }
 
 .user-stats {
@@ -139,13 +137,23 @@
 
 .stats-row {
   display: flex;
-  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .stats-block {
   flex-grow: 1;
   font-size: 36px;
+  line-height: 36px;
   font-family: 'JetBrainsMono';
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.hide-button {
+  margin-top: 10px;
+  width: 100px;
 }
 
 @keyframes App-logo-spin {

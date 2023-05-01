@@ -5,6 +5,11 @@ import SteamIDForm from './SteamIDForm';
 import HelpButton from './components/HelpButton'
 import GamePanel from './components/GamePanel'
 
+function gameFiler(item) {
+	let itemScore = item.achievements_count - item.achievements_done;
+	return itemScore != 0;
+}
+
 function App() {
 	const [gameData, setGameData] = useState({});
 	const [showFullDone, setShowFullDone] = useState(false);
@@ -15,7 +20,7 @@ function App() {
 
 	if (has_data) {
 		if (!showFullDone) {
-			gameData.game_data = gameData.game_data.filter(item => item.achievements_count - item.achievements_done != 0);
+			gameData.game_data = gameData.game_data.filter(gameFiler);
 		}
 
 		gameData.game_data.sort((a, b) => {
@@ -29,7 +34,6 @@ function App() {
 			}
 			return 0;
 		});
-
 
 		var game_count = gameData.game_data.length;
 		var doneAchievements = gameData.overall_done_ach_count;
