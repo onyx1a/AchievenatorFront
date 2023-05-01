@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import SteamIDForm from './SteamIDForm';
-import AchievementDescTooltip from './AchievementDescTooltip'
-import ImageWithPlaceholder from './ImageWithPlaceholder'
-import HelpButton from './HelpButton'
-import GamePanel from './GamePanel'
+import AchievementDescTooltip from './components/AchievementDescTooltip'
+import ImageWithPlaceholder from './components/ImageWithPlaceholder'
+import HelpButton from './components/HelpButton'
+import GamePanel from './components/GamePanel'
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 function App() {
