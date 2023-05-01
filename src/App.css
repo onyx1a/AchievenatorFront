@@ -42,11 +42,10 @@
 
 .game-info {
   display: flex;
-  width: 100%;
   flex-direction: column;
   padding: 15px;
   height: 140px;
-  overflow: hidden;
+  transition: height 0.5s ease;
 }
 
 .game-title {
@@ -64,11 +63,12 @@
 }
 
 .game-icons {
-  margin-top: 10px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .game-icon {
+  margin-top: 10px;
   margin-right: 10px;
   width: 48px;
   height: 48px;
