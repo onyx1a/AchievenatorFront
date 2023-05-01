@@ -3,6 +3,23 @@
   src: local('JetBrainsMono'), url('./fonts/JetBrainsMono/JetBrainsMono-Regular.woff2') format('woff');
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5e5e5e;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f3f;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
