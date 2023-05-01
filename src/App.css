@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: local('JetBrainsMono'), url('./fonts/JetBrainsMono/JetBrainsMono-Regular.woff2') format('woff');
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -69,6 +74,15 @@
   height: 48px;
 }
 
+.game-icon-fake {
+  border: 1px solid #848f97;
+  background-color: #171a21;
+  line-height: 48px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
 .App-body li {
   list-style-type: none;
   font-size: 1.2em;
@@ -90,6 +104,31 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.question-icon {
+  vertical-align: middle;
+  /* font-size: 1em; */
+  color: #888;
+  /* width: 16px; */
+  /* float: left; */
+  /* margin-left: 5px; */
+}
+
+.user-stats {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.stats-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.stats-block {
+  flex-grow: 1;
+  font-size: 36px;
+  font-family: 'JetBrainsMono';
 }
 
 @keyframes App-logo-spin {

@@ -4,6 +4,9 @@ import './App.css';
 import SteamIDForm from './SteamIDForm';
 import AchievementDescTooltip from './AchievementDescTooltip'
 import ImageWithPlaceholder from './ImageWithPlaceholder'
+import HelpButton from './HelpButton'
+import GamePanel from './GamePanel'
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 function App() {
   const [gameData, setGameData] = useState({});
@@ -29,6 +32,12 @@ function App() {
       }
       return 0;
     });
+
+    
+    var game_count = gameData.game_data.length;
+    var doneAchievements = gameData.overall_done_ach_count;
+    var totalAchievements = gameData.overall_ach_count;
+    var total_score = totalAchievements - doneAchievements;
   }
 
   return (
@@ -39,11 +48,11 @@ function App() {
       <body className="App-body">
         <SteamIDForm onDataReceived={setGameData}/>
         {has_data && (
-            <div>
-              Games: {gameData.game_data.length}<br/>
-              Achievements: {gameData.overall_done_ach_count}/{gameData.overall_ach_count}<br/>
-              Total score: {gameData.overall_ach_count-gameData.overall_done_ach_count} (?)<br/>
           <>
+            <div className='user-stats stats-row'>
+              <div className='stats-block'>Games: {game_count}</div>
+              <div className='stats-block'>Achievements: {gameData.overall_done_ach_count}/{gameData.overall_ach_count}</div>
+              <div className='stats-block'>Total score: {total_score} <HelpButton text="Score — идентификация того, сколько у вас неполученных достижений."/></div>
             </div>
             <ul>
               {gameData.game_data.map(game => (
