@@ -46,11 +46,13 @@ function App() {
 				<SteamIDForm onDataReceived={setGameData}/>
 				{has_data && (
 					<>
+						<hr/>
 						<div className='user-stats stats-row'>
-							<div className='stats-block'>Games: {game_count}</div>
-							<div className='stats-block'>Achievements: {gameData.overall_done_ach_count}/{gameData.overall_ach_count}</div>
-							<div className='stats-block'>Total score: {total_score} <HelpButton text="Score — идентификация того, сколько у вас неполученных достижений."/></div>
+							<div className='stats-block'>Games<br/>{game_count}</div>
+							<div className='stats-block'>Achievements<br/>{gameData.overall_done_ach_count}/{gameData.overall_ach_count}</div>
+							<div className='stats-block'>Total score<br/>{total_score} <HelpButton text="Score — идентификация того, сколько у вас неполученных достижений."/></div>
 						</div>
+						<hr/>
 						<ul>
 							{gameData.game_data.slice(0, 20).map(game => (
 								<li key={game.app_id}>
