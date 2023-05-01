@@ -4,14 +4,14 @@ const ImageWithPlaceholder = (props) => {
 	const { imageUrl, placeholder, ...rest } = props;
 	const [isLoading, setImageLoaded] = useState(true);
 	const handleImageLoad = () => {
-			setImageLoaded(false);
+		setImageLoaded(false);
 	};
-	
+
 	return (
-			<>
-					{isLoading && <img src={placeholder} {...rest}/>}
-					<img src={imageUrl} onLoad={handleImageLoad} style={{ display: isLoading ? 'none' : 'block' }} {...rest}/>
-			</>
+		<>
+			{isLoading && <img src={placeholder} {...rest}/>}
+			<img src={imageUrl} onLoad={handleImageLoad} style={{ display: isLoading ? 'none' : 'block' }} {...rest}/>
+		</>
 	);
 };
 

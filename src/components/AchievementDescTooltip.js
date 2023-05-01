@@ -4,19 +4,19 @@ import ImageWithPlaceholder from "./ImageWithPlaceholder";
 
 const AchievementDescTooltip = ({ iconUrl, tooltipTitle, tooltipDesc }) => {
 	const redterTooltip = (props) => (
-			<Tooltip {...props}>
-					<strong>{ tooltipTitle }</strong>
-					<br/>
-					{ tooltipDesc }
-			</Tooltip>
+		<Tooltip {...props}>
+			<strong>{ tooltipTitle }</strong>
+			<br/>
+			{ tooltipDesc }
+		</Tooltip>
 	);
 
 	return (
-			<OverlayTrigger placement="top" overlay={redterTooltip}>
-					<div>
-							<ImageWithPlaceholder imageUrl={iconUrl} placeholder="/img_ph.jpg" className="game-icon"/>
-					</div>
-			</OverlayTrigger>
+		<OverlayTrigger placement="top" overlay={redterTooltip}>
+			<div>
+				<ImageWithPlaceholder imageUrl={iconUrl} placeholder="/img_ph.jpg" className="game-icon"/>
+			</div>
+		</OverlayTrigger>
 	);
 };
 
