@@ -59,7 +59,7 @@ function SteamIDForm(props) {
         </Form.Group>
         <Button variant="primary" type="submit" disabled={isLoading}>
           {isLoading ? (
-            <div>
+            <>
               <Spinner
                 as="span"
                 size="sm"
@@ -67,7 +67,7 @@ function SteamIDForm(props) {
                 aria-hidden="true"
               />
               Loading...
-            </div>
+            </>
           ): "Search"}
         </Button>
     </Form>

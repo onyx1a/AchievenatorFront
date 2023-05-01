@@ -39,11 +39,11 @@ function App() {
       <body className="App-body">
         <SteamIDForm onDataReceived={setGameData}/>
         {has_data && (
-          <div>
             <div>
               Games: {gameData.game_data.length}<br/>
               Achievements: {gameData.overall_done_ach_count}/{gameData.overall_ach_count}<br/>
               Total score: {gameData.overall_ach_count-gameData.overall_done_ach_count} (?)<br/>
+          <>
             </div>
             <ul>
               {gameData.game_data.map(game => (
@@ -68,7 +68,7 @@ function App() {
                 </li>
               ))}
             </ul> 
-          </div>
+          </>
         )}
       </body>
     </div>
