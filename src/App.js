@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import SteamIDForm from './SteamIDForm';
 import AchievementDescTooltip from './AchievementDescTooltip'
+import ImageWithPlaceholder from './ImageWithPlaceholder'
 
 function App() {
   const [gameData, setGameData] = useState({});
@@ -48,7 +49,7 @@ function App() {
               {gameData.game_data.map(game => (
                 <li key={game.app_id}>
                   <div className='game-item'>
-                    <img className='game-logo' key={game.app_id} src={`https://cdn.cloudflare.steamstatic.com/steam/apps/${game.app_id}/header.jpg`} alt={game.title}/>
+                    <ImageWithPlaceholder className="game-logo" alt={game.title} key={game.app_id} imageUrl={`https://cdn.cloudflare.steamstatic.com/steam/apps/${game.app_id}/header.jpg`} placeholder="/game_logo_ph.jpg" />
                     <div className='game-info'>
                       <div className='game-title'><a href={`https://store.steampowered.com/app/${game.app_id}`} target="_blank">{game.title}</a></div>
                       <div className='game-desc'>Achievements: {game.achievements_done}/{game.achievements_count}. Score: {game.achievements_count-game.achievements_done}</div>
