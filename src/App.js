@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import SteamIDForm from './SteamIDForm';
+import AchievementDescTooltip from './AchievementDescTooltip'
 
 function App() {
   const [gameData, setGameData] = useState({});
@@ -52,11 +53,14 @@ function App() {
                       <div className='game-title'><a href={`https://store.steampowered.com/app/${game.app_id}`} target="_blank">{game.title}</a></div>
                       <div className='game-desc'>Achievements: {game.achievements_done}/{game.achievements_count}. Score: {game.achievements_count-game.achievements_done}</div>
                       <div className='game-icons'>
-                        <img className="game-icon" src={`http://media.steampowered.com/steamcommunity/public/images/apps/${game.app_id}/${game.img_icon_url_hash}.jpg`}/>
-                        <img className="game-icon" src={`http://media.steampowered.com/steamcommunity/public/images/apps/${game.app_id}/${game.img_icon_url_hash}.jpg`}/>
-                        <img className="game-icon" src={`http://media.steampowered.com/steamcommunity/public/images/apps/${game.app_id}/${game.img_icon_url_hash}.jpg`}/>
-                        <img className="game-icon" src={`http://media.steampowered.com/steamcommunity/public/images/apps/${game.app_id}/${game.img_icon_url_hash}.jpg`}/>
-                        <img className="game-icon" src={`http://media.steampowered.com/steamcommunity/public/images/apps/${game.app_id}/${game.img_icon_url_hash}.jpg`}/>
+                        {game.achievements_info.slice(0, 5).map(info => (
+                          <AchievementDescTooltip iconUrl={info.icongray} tooltipDesc={info.description} tooltipTitle={info.displayName}/>
+                        ))}
+                        {game.achievements_info.length > 5 && (
+                          <div className='game-icon game-icon-fake'>
+                            +{game.achievements_info.length - 5}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
