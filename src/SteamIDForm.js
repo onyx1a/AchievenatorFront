@@ -55,7 +55,7 @@ function SteamIDForm(props) {
 				<Form.Label>Profile URL or SteamID:</Form.Label>
 				<Form.Control id='query' onChange={handleQueryChange}/>
 				<Form.Text muted>
-					https://steamcommunity.com/id/onyx1a / onyx1a / 76561198089758289
+					https://steamcommunity.com/id/onyx1a or 76561198089758289
 				</Form.Text>
 			</Form.Group>
 			<Button variant="primary" type="submit" disabled={isLoading}>

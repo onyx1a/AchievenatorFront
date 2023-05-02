@@ -14,10 +14,10 @@ const GamePanel = (props) => {
 	const { game_info } = props;
 	const title = game_info.title;
 	const appId = game_info.app_id;
-	const achievementsDone = game_info.achievements_done;
-	const achievementsCount = game_info.achievements_count;
+	const achievementsDone = game_info.a_done;
+	const achievementsCount = game_info.a_count;
 	const score = achievementsCount - achievementsDone;
-	const achievementsInfo = game_info.achievements_info;
+	const achievementsInfo = game_info.a_info;
 	const moreAchiementsTooltip = "Click for show more achievements";
 
 	const showMoreAchiements = () => {
@@ -48,7 +48,7 @@ const GamePanel = (props) => {
 				<div className='game-desc'>Achievements: {achievementsDone}/{achievementsCount}. Score: {score}</div>
 				<div className="game-icons" style={{ overflow: `${iconOverflow ? 'auto': 'hidden'}` }}>
 					{achievementsInfo.slice(0, showAchievements).map(info => (
-						<AchievementDescTooltip iconUrl={info.icongray} tooltipDesc={info.description} tooltipTitle={info.displayName}/>
+						<AchievementDescTooltip iconUrl={`http://media.steampowered.com/steamcommunity/public/images/apps/${appId}/${info.icongray}.jpg`} tooltipDesc={info.description} tooltipTitle={info.displayName}/>
 					))}
 					{achievementsInfo.length > showAchievements && (
 						<OverlayTrigger placement="top" overlay={showMoreAchiementsTooltip}>

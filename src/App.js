@@ -6,7 +6,7 @@ import HelpButton from './components/HelpButton'
 import GamePanel from './components/GamePanel'
 
 function gameFiler(item) {
-	let itemScore = item.achievements_count - item.achievements_done;
+	let itemScore = item.a_count - item.a_done;
 	return itemScore != 0;
 }
 
@@ -24,8 +24,8 @@ function App() {
 		}
 
 		gameData.game_data.sort((a, b) => {
-			var scoreA = a.achievements_count - a.achievements_done;
-			var scoreB = b.achievements_count - b.achievements_done;
+			var scoreA = a.a_count - a.a_done;
+			var scoreB = b.a_count - b.a_done;
 			if (scoreA < scoreB) {
 				return -1;
 			}
