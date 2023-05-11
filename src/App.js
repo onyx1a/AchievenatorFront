@@ -4,25 +4,55 @@ import './App.css';
 import SteamIDForm from './components/SteamIDForm';
 import HelpButton from './components/HelpButton'
 import GamePanel from './components/GamePanel'
-
-function gameFiler(item) {
-	let itemScore = item.a_count - item.a_done;
-	return itemScore != 0;
-}
+import FilterPanel from './components/FilterPanel'
 
 function App() {
 	const [gameData, setGameData] = useState({});
-	const [showFullDone, setShowFullDone] = useState(false);
+	const [filteredData, setFilteredData] = useState([]);
+	const [filterList, setFilterList] = useState(new Map());
 
-	console.log(gameData);
-	let has_data = Object.keys(gameData).length !== 0;
-	console.log(has_data);
 
-	if (has_data) {
-		if (!showFullDone) {
-			gameData.game_data = gameData.game_data.filter(gameFiler);
+	const getActualContainer = () => {
+		if (filterList.size !== 0) {
+			return filteredData;
+		}
+		return gameData.game_data;
+	}
+
+	const updateFilterList = () => {
+		console.log(filterList);
+		let data;
+		if (filterList.size === 0) {
+			setFilteredData([]);
+			return;
+		} else if (filterList.size === 1){
+			data = gameData.game_data;
+		} else {
+			data = filteredData;
 		}
 
+		data = data.filter((item) => {
+			return Array.from(filterList.values()).every((filter) => {
+				return filter.callback(item);
+			});
+		});
+		
+		setFilteredData(data);
+	};
+
+	const addToFilterList = (filter) => {
+		filterList.set(filter.key, filter);
+		updateFilterList();
+	};
+
+	const removeFromFilterList = (filter) => {
+		filterList.delete(filter.key);
+		updateFilterList();
+	};
+
+	let has_data = Object.keys(gameData).length !== 0;
+	
+	if (has_data) {
 		gameData.game_data.sort((a, b) => {
 			var scoreA = a.a_count - a.a_done;
 			var scoreB = b.a_count - b.a_done;
@@ -57,8 +87,9 @@ function App() {
 							<div className='stats-block'>Total score<br/>{total_score} <HelpButton text="Score — идентификация того, сколько у вас неполученных достижений."/></div>
 						</div>
 						<hr/>
+						<FilterPanel addToFilterList={addToFilterList} removeFromFilterList={removeFromFilterList}/>
 						<ul>
-							{gameData.game_data.slice(0, 20).map(game => (
+							{getActualContainer().slice(0, 20).map(game => (
 								<li key={game.app_id}>
 									<GamePanel game_info={game}/>
 								</li>
