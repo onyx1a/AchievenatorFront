@@ -59,7 +59,6 @@ const GamePanel = (props) => {
 					)}
 				</div>
 				{shownHideButton && (
-						// <span className="hide-button" onClick={hideMoreAchievements}>Hide</span>
 						<Button className="hide-button" variant="primary" onClick={hideMoreAchievements} size="sm">
 							Hide
 						</Button>
