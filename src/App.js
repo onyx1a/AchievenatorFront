@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import SteamIDForm from './SteamIDForm';
+import SteamIDForm from './components/SteamIDForm';
 import HelpButton from './components/HelpButton'
 import GamePanel from './components/GamePanel'
 
