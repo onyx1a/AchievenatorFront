@@ -48,7 +48,7 @@ const GamePanel = (props) => {
 				<div className='game-desc'>Achievements: {achievementsDone}/{achievementsCount}. Score: {score}</div>
 				<div className="game-icons" style={{ overflow: `${iconOverflow ? 'auto': 'hidden'}` }}>
 					{achievementsInfo.slice(0, showAchievements).map(info => (
-						<AchievementDescTooltip iconUrl={`http://media.steampowered.com/steamcommunity/public/images/apps/${appId}/${info.icongray}.jpg`} tooltipDesc={info.description} tooltipTitle={info.displayName}/>
+						<AchievementDescTooltip iconUrl={`http://media.steampowered.com/steamcommunity/public/images/apps/${appId}/${info.icon2}.jpg`} tooltipDesc={info.desc} tooltipTitle={info.name}/>
 					))}
 					{achievementsInfo.length > showAchievements && (
 						<OverlayTrigger placement="top" overlay={showMoreAchiementsTooltip}>
