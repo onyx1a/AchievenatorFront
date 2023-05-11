@@ -43,6 +43,7 @@
 
 .App-body {
   color: #f8f8f8;
+  padding: 16px;
 }
 
 .game-item {
@@ -154,6 +155,11 @@
 .hide-button {
   margin-top: 10px;
   width: 100px;
+}
+
+.custom-container {
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 @keyframes App-logo-spin {

@@ -69,7 +69,7 @@ const FilterPanel = (props) => {
         <Col xs={3}>
           <InputGroup className="mb-3">
             <Form.Control id='title' value={filterTitle} onChange={typeTitle} onKeyDown={applyTitleFilter}/>
-            <Button variant="outline-secondary" onClick={clearTitleFilter}>Clear</Button>
+            <Button variant="outline-light" onClick={clearTitleFilter}>Clear</Button>
           </InputGroup>
         </Col>
       </Row>
